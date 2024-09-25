@@ -1,0 +1,64 @@
+<!-- src/templates/verificationEmail.hbs -->
+
+<html lang='ko'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap'
+      rel='stylesheet'
+    />
+    <title>Termy 이메일 인증</title>
+    <style>
+      body { margin: 0; padding: 0; background-color: #001f3f; /* 어두운 남색
+      배경 */ font-family: Arial, sans-serif; } h1 { margin: 0; font-family:
+      'Space Mono', monospace; font-weight: 700; font-style: normal; }
+      .container { width: 100%; max-width: 600px; margin: 0 auto;
+      background-color: #ffffff; text-align: center; /* 흰색 배경 */ padding:
+      20px; } .header { background-color: #001f3f; color: #ffffff; padding: 10px
+      0; text-align: center; } .content { padding: 20px; color: #333333; }
+      .button { padding: 10px 20px; margin-top: 20px; background-color: #0074d9;
+      /* 파란색 버튼 */ color: #ffffff; text-decoration: none; border-radius:
+      5px; } .footer { text-align: center; padding: 10px 0; font-size: 12px;
+      color: #777777; } @media only screen and (max-width: 600px) { .container {
+      padding: 10px; } .button { width: 100%; text-align: center; } }
+    </style>
+  </head>
+  <body>
+    <table width='100%' cellpadding='0' cellspacing='0'>
+      <tr>
+        <td align='center'>
+          <table class='container' cellpadding='0' cellspacing='0'>
+            <tr>
+              <td class='header'>
+                <h1>Termy</h1>
+              </td>
+            </tr>
+            <tr>
+              <td class='content'>
+                <p>안녕하세요, {{username}}님!</p>
+                <p>
+                  Termy 서비스를 이용해주셔서 감사합니다. 아래 버튼을 클릭하여
+                  이메일 인증을 완료해주세요.
+                </p>
+                <a href='{{verificationLink}}' class='button'>이메일 인증하기</a>
+                <p>
+                  만약 버튼이 작동하지 않는다면, 아래 링크를 복사하여 브라우저에
+                  붙여넣어 인증해주세요:
+                </p>
+                <p><a href='{{verificationLink}}'>{{verificationLink}}</a></p>
+              </td>
+            </tr>
+            <tr>
+              <td class='footer'>
+                <p>&copy; {{year}} Termy. All rights reserved.</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
